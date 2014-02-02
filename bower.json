@@ -1,0 +1,18 @@
+{
+  "name": "3d-ring",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sabov/3d-ring",
+  "authors": [
+    "Oleksandr Sabov <alexsabov@gmail.com>"
+  ],
+  "description": "3D model of the ring",
+  "main": "index.html",
+  "license": "Apache2",
+  "dependencies": {
+    "three.js": "*",
+    "jquery": "~2.0.3",
+    "threex.windowresize": "*",
+    "threex.keyboardstate": "*",
+    "ShaderLoader.js": "*"
+  }
+}
