@@ -31,8 +31,8 @@
     // add an object and make it move //
     /////////////////////////////////////////////////////////////////////////////////
 
-    var geometry    = new THREE.TorusKnotGeometry(1-0.25, 0.25, 32*3, 32);
-    // var geometry = new THREE.TorusGeometry(1-0.25, 0.25);
+    //var geometry    = new THREE.TorusKnotGeometry(1-0.25, 0.25, 32*3, 32);
+     var geometry = new THREE.TorusGeometry(1-0.25, 0.10, 10, 100);
     // var geometry = new THREE.SphereGeometry(1, 32, 16);
     // var geometry = new THREE.CubeGeometry(1,1,1, 10, 10, 10);
 
@@ -57,9 +57,9 @@
 
     // example of customization of the default glowMesh
     var insideUniforms  = glowMesh.insideMesh.material.uniforms
-    insideUniforms.glowColor.value.set('hotpink')
+    insideUniforms.glowColor.value.set('green')
     var outsideUniforms = glowMesh.outsideMesh.material.uniforms
-    outsideUniforms.glowColor.value.set('hotpink')
+    outsideUniforms.glowColor.value.set('lightgreen')
 
     //////////////////////////////////////////////////////////////////////////////////
     // add dat.GUI for fine tuning //
@@ -79,8 +79,10 @@
         mouse.y = (event.clientY / window.innerHeight) - 0.5
     }, false)
         updateFcts.push(function(delta, now){
-        camera.position.x += (mouse.x*10 - camera.position.x) * (delta*3)
-        camera.position.y += (mouse.y*10 - camera.position.y) * (delta*3)
+        //camera.position.x += (mouse.x*10 - camera.position.x) * (delta*3)
+        //camera.position.y += (mouse.y*10 - camera.position.y) * (delta*3)
+        //mesh.rotation.x += 0.005;
+        mesh.rotation.y += 0.02;
         camera.lookAt( scene.position )
     })
 
