@@ -56,11 +56,24 @@
     //////////////////////////////////////////////////////////////////////////////////
 
     // example of customization of the default glowMesh
-    var insideUniforms  = glowMesh.insideMesh.material.uniforms
-    insideUniforms.glowColor.value.set('green')
-    var outsideUniforms = glowMesh.outsideMesh.material.uniforms
-    outsideUniforms.glowColor.value.set('lightgreen')
+    var insideUniforms  = glowMesh.insideMesh.material.uniforms;
+    insideUniforms.glowColor.value.set('green');
+    var outsideUniforms = glowMesh.outsideMesh.material.uniforms;
+    outsideUniforms.glowColor.value.set('lightgreen');
 
+    var r = 10;
+    var g = 99;
+        setInterval(function() {
+            if(r < 99){
+                r++;
+            }
+            if(g > 10) {
+                g--;
+            }
+
+            insideUniforms.glowColor.value.set('#' + r + g + '22');
+            outsideUniforms.glowColor.value.set('#' + r + g + '22');
+        }, 10);
     //////////////////////////////////////////////////////////////////////////////////
     // add dat.GUI for fine tuning //
     //////////////////////////////////////////////////////////////////////////////////
