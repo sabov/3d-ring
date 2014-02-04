@@ -40,6 +40,7 @@
         color   : new THREE.Color('gray')
     })
     var mesh    = new THREE.Mesh( geometry, material );
+    mesh.scale.set( 1, 1, 1.5 );
     // mesh.visible = false
     scene.add( mesh );
 
@@ -63,17 +64,25 @@
 
     var r = 10;
     var g = 99;
+    var flag = true;
         setInterval(function() {
-            if(r < 99){
-                r++;
-            }
-            if(g > 10) {
+            if(flag) {
                 g--;
+                r++;
+                if(r == 98){
+                    flag = false;
+                }
+            } else {
+                r--;
+                g++;
+                if(r == 11) {
+                    flag = true;
+                }
             }
 
             insideUniforms.glowColor.value.set('#' + r + g + '22');
             outsideUniforms.glowColor.value.set('#' + r + g + '22');
-        }, 10);
+        }, 60);
     //////////////////////////////////////////////////////////////////////////////////
     // add dat.GUI for fine tuning //
     //////////////////////////////////////////////////////////////////////////////////
